@@ -1,0 +1,37 @@
+{% extends "authentication/basic.html" %}
+
+{% block title %}
+index page
+{% endblock %}
+
+{% block body %}
+
+
+
+{% if user.is_authenticated %}
+
+    <div class="container mx-5 my-5">
+        <h3>Hello {{firstname}}</h3>
+        <h3>Login Successfull!! Welcome to MySiteLogin!!</h3>
+        
+        <label>Want to signOut from your account? </label><br>
+        <a href="signout" class="btn btn-success my-3">SignOut</a>
+    </div>
+
+
+{% else %}
+<div class="container mx-5 my-5">
+    <h1>Welcome to the mySiteLogin !!</h1>
+    <h4>Select from options below to continue</h4>
+</div>
+
+<div class="container mx-5 my-5">
+    <label>Dont have an account yet? </label>
+    <a href="signup" class="btn btn-primary my-3">SignUp</a><br>
+    <label>Already have an account? </label>
+    <a href="signin" class="btn btn-success my-3">SignIn</a>
+</div>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "authentication/basic.html" %}
+
+{% block title %}
+    SignIn
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-5 mx-5">
+    <form action="signin" method="POST">
+    {% csrf_token %}
+        <div class="mb-3">
+            <label for="userName" class="form-label">UserName</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your UserName">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="btn btn-primary">SignIn</button>
+    </form>
+</div>
+
+
+{% endblock %}

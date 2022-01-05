@@ -1,0 +1,40 @@
+{% extends "authentication/basic.html" %}
+
+{% block title %}
+    SignUp
+{% endblock %}
+
+{% block body %}
+
+<div class="container mx-5 my-5">
+    <form action="/signup" method="POST">
+    {% csrf_token %}
+        <div class="mb-3">
+            <label for="firstname" class="form-label">FirstName</label>
+            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter your firstname">
+        </div>
+        <div class="mb-3">
+            <label for="lastname" class="form-label">LastName</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter your lastname">
+        </div>
+        <div class="mb-3">
+            <label for="userName" class="form-label">UserName</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your UserName">
+        </div>
+        <div class="mb-3">
+            <label for="emailid" class="form-label">EmailId</label>
+            <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Enter your emailid">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+        </div>
+        <div class="mb-3">
+            <label for="passwordverify" class="form-label">Enter Password Again </label>
+            <input type="password" class="form-control" id="passwordverify" name="passwordverify" placeholder="Enter your password again">
+        </div>
+        <button type="submit" class="btn btn-primary">SignUp</button>
+    </form>
+</div>
+
+{% endblock %}
